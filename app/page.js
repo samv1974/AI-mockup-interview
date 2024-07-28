@@ -1,10 +1,10 @@
-"use client"
+"use client";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, Stars, Dodecahedron } from '@react-three/drei';
-import { useRef } from 'react';
+import { Canvas, useFrame } from "@react-three/fiber";
+import { OrbitControls, Stars, Dodecahedron } from "@react-three/drei";
+import { useRef } from "react";
 
 // Component to rotate the Dodecahedron
 const RotatingDodecahedron = () => {
@@ -89,16 +89,17 @@ export default function Home() {
             Give Interview
           </Button>
         </Link>
-        <div className="mt-10 flex items-center space-x-8">
-          {/* Image */}
-          <video src="https://videos.pexels.com/video-files/5439078/5439078-sd_640_360_25fps.mp4" 
-          autoplay
-          muted
-          alt="Interview Mockup"
-          className="rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-300 ease-in-out w-1/3 ml-20"/>
-         
+        <div className="mt-10 flex flex-col lg:flex-row items-center space-y-8 lg:space-y-0 lg:space-x-8">
+          {/* Video */}
+          <video
+            src="https://videos.pexels.com/video-files/5439078/5439078-sd_640_360_25fps.mp4"
+            autoPlay
+            muted
+            alt="Interview Mockup"
+            className="rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-300 ease-in-out w-full lg:w-1/3"
+          />
           {/* 3D Canvas */}
-          <div className="w-2/3 h-80 relative">
+          <div className="w-full lg:w-2/3 h-80 relative">
             <Canvas>
               <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} />
               <ambientLight intensity={0.8} />
